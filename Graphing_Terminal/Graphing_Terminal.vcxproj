@@ -139,7 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="curves.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="camera.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="base.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
