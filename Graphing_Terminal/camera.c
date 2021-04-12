@@ -2,6 +2,7 @@
 #include <math.h>
 
 #include "base.h"
+#include "adv.h"
 
 
 Bound get_Bounds(Camera camera)

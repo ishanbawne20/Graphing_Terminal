@@ -24,9 +24,15 @@
     <ClCompile Include="curves.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="commandLine.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="adv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

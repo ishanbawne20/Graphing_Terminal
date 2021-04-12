@@ -11,10 +11,13 @@
 //Structs
 
 typedef struct Vectors{
-	float x;
-	float y;
+	double x;
+	double y;
 } Vector;
 
+typedef struct Outputs {
+	char stream[screen_height][screen_width];
+}Output;
 
 typedef struct ScreenVectors{
 	int x;
