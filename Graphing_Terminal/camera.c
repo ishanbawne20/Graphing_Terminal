@@ -7,7 +7,7 @@
 
 Bound get_Bounds(Camera camera)
 {
-	Bound bound = { camera.position.x, (camera.position.x + screen_width) * camera.scale,(camera.position.y - screen_height) * camera.scale ,camera.position.y };
+	Bound bound = { (camera.position.x - (screen_width/2))*camera.scale, (camera.position.x + (screen_width/2)) * camera.scale,(camera.position.y - (screen_height/2)) * camera.scale ,(camera.position.y + (screen_height/2))*camera.scale };
 	return bound;
 }
 

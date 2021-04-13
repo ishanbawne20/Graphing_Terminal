@@ -30,5 +30,7 @@ Camera transCamera(Camera camera);
 Camera scaleCamera(Camera camera);
 Camera setPosCamera(Camera camera);
 
+Vector PolarToCartesian(Vector polar);
+
 #endif // !COMMAND_H
 
