@@ -10,7 +10,7 @@
 Camera takeCommand(Camera camera)
 {
 	char pross;
-	printf(" :: GTerminal >>> ");
+	printf("|| P : (%f, %f) || S : 1:%lf :: GTerminal >>> ", camera.position.x, camera.position.y, camera.scale);
 	scanf(" %c", &pross);
 	Camera retcam ;
 

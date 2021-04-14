@@ -32,27 +32,27 @@ reiterate :
 
 	//Template for Rendering Curve with one parameter.
 
-	CurveParamOne circle = { 0, 6.5, 0.02 };
+	/*CurveParamOne circle = { 0, 6.5, 0.02 };
 
 	for (float i = circle.one_start; i < circle.one_end; i += circle.one_step)
 	{
 		Vector point = { 5, i};
 		ScreenVector index = indexer(PolarToCartesian(point), camera);
 		output.stream[index.y][index.x] = index.pixel;
-	}
+	}*/
 
 	// Another Template for rendering on parameter curve
 	
-	CurveParamOne sincurve = { -30, 40, 0.01 };
+	/*CurveParamOne sincurve = { -30, 40, 0.01 };
 
 	for (float i = sincurve.one_start; i < sincurve.one_end; i+= sincurve.one_step)
 	{
 		Vector po = { i, 2*sin(i) };
 		ScreenVector indo = indexer(po, camera);
 		output.stream[indo.y][indo.x] = indo.pixel;
-	}
+	}*/
 
-	/*CurveParamOne Limacon = { 0, 6.5, 0.01 };
+	CurveParamOne Limacon = { 0, 6.5, 0.01 };
 
 	float a = 1;
 	float b = 1;
@@ -62,12 +62,12 @@ reiterate :
 		Vector po = { (b + (a*cos(i)))*cos(i), (b + (a * cos(i)))*sin(i) };
 		ScreenVector indo = indexer(po, camera);
 		output.stream[indo.y][indo.x] = indo.pixel;
-	}*/
+	}
 	
 	render(output.stream);
 	camera = takeCommand(camera);
 	initialize_cam();
-	system("cls");
+	system("@cls||clear");
 	goto reiterate;
 }
 

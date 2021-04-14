@@ -28,7 +28,7 @@ typedef struct ScreenVectors{
 typedef struct Cameras
 {
 	Vector position;
-	float scale;
+	double scale;
 } Camera;
 
 
