@@ -7,7 +7,7 @@
 // Main Variables 
 
 Output output;
-Camera camera = { {0,0}, 1 };
+Camera camera = { {-screen_width/2,screen_height/2}, 1 };
 
 // Function Declarations
 
