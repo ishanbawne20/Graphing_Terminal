@@ -32,14 +32,14 @@ reiterate :
 
 	//Template for Rendering Curve with one parameter.
 
-	/*CurveParamOne circle = { 0, 6.5, 0.02 };
+	CurveParamOne circle = { 0, 6.5, 0.02 };
 
 	for (float i = circle.one_start; i < circle.one_end; i += circle.one_step)
 	{
 		Vector point = { 5, i};
 		ScreenVector index = indexer(PolarToCartesian(point), camera);
 		output.stream[index.y][index.x] = index.pixel;
-	}*/
+	}
 
 	// Another Template for rendering on parameter curve
 	
