@@ -23,6 +23,7 @@ void initialize_cam()
 		}
 	}
 }
+//Functions for calculating vectors
 
 Vector lim(float i)
 {
@@ -48,6 +49,7 @@ reiterate :
 	CurveParamOne circle = { 0, 6.5, 0.02 , Circle};
 	output = iterate(output, circle, camera);
 
+	//Template for Rendering Curve with one parameter.
 	CurveParamOne Limacon = { 0, 6.5, 0.01 ,lim};
 	output = iterate(output, Limacon, camera);
 	
