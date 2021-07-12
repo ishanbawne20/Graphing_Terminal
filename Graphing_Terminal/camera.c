@@ -17,7 +17,9 @@ ScreenVector indexer(Vector position, Camera camera)
 	float step_x = (bounds.x_end - bounds.x_start) / screen_width;
 	float step_y = (bounds.y_end - bounds.y_start) / screen_height;
 
-	for (int i = 0; i < screen_width; i++)
+	// OLD DUMB CODE
+
+	/*for (int i = 0; i < screen_width; i++)
 	{
 		for (int j = 0; j < screen_height; j++)
 		{
@@ -28,8 +30,21 @@ ScreenVector indexer(Vector position, Camera camera)
 			}
 		}
 	}
-	ScreenVector index = { 0,0,' ' };
-	return index;
+	ScreenVector alt = { 0,0,' ' };
+	return alt;*/
+
+	//NEW CODE
+	ScreenVector origin = {  - bounds.x_start / step_x, - bounds.y_start / step_y, ' ' };
+	
+	ScreenVector index = { origin.x + (position.x / step_x), origin.y + (position.y / step_y), '*' };
+	if (index.x >= 0 && index.y >= 0 && index.x < screen_width && index.y < screen_height)
+	{
+		return index;
+	}
+	else {
+		ScreenVector alt = { 0,0,' ' };
+		return alt;
+	}
 }
 
 

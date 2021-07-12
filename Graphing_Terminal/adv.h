@@ -7,21 +7,11 @@
 
 typedef struct CurvesParamOne
 {
-	double one_start;
-	double one_end;
-	double one_step;
+	double start;
+	double end;
+	double step;
+	Vector(*curve)(float);
 } CurveParamOne;
-
-
-typedef struct CurvesParamTwo
-{
-	double one_start;
-	double two_start;
-	double one_end;
-	double two_end;
-	double one_step;
-	double two_step;
-} CurveParamTwo;
 
 // Function Declaration
 
@@ -31,6 +21,7 @@ Camera scaleCamera(Camera camera);
 Camera setPosCamera(Camera camera);
 
 Vector PolarToCartesian(Vector polar);
+Output iterate(Output output, CurveParamOne curve, Camera camera);
 
 #endif // !COMMAND_H
 

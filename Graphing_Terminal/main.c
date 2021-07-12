@@ -24,6 +24,20 @@ void initialize_cam()
 	}
 }
 
+Vector lim(float i)
+{
+	float a = 1;
+	float b = 1;
+	Vector po = { (b + (a * cos(i))) * cos(i), (b + (a * cos(i))) * sin(i) };
+	return po;
+}
+
+Vector Circle(float i)
+{
+	Vector point = { 5, i };
+	return PolarToCartesian(point);
+}
+
 void mainProcess()
 {
 reiterate :
@@ -31,38 +45,11 @@ reiterate :
 	drawAxes(camera);
 
 	//Template for Rendering Curve with one parameter.
+	CurveParamOne circle = { 0, 6.5, 0.02 , Circle};
+	output = iterate(output, circle, camera);
 
-	CurveParamOne circle = { 0, 6.5, 0.02 };
-
-	for (float i = circle.one_start; i < circle.one_end; i += circle.one_step)
-	{
-		Vector point = { 5, i};
-		ScreenVector index = indexer(PolarToCartesian(point), camera);
-		output.stream[index.y][index.x] = index.pixel;
-	}
-
-	// Another Template for rendering on parameter curve
-	
-	/*CurveParamOne sincurve = { -30, 40, 0.01 };
-
-	for (float i = sincurve.one_start; i < sincurve.one_end; i+= sincurve.one_step)
-	{
-		Vector po = { i, 2*sin(i) };
-		ScreenVector indo = indexer(po, camera);
-		output.stream[indo.y][indo.x] = indo.pixel;
-	}*/
-
-	CurveParamOne Limacon = { 0, 6.5, 0.01 };
-
-	float a = 1;
-	float b = 1;
-
-	for (float i = Limacon.one_start; i < Limacon.one_end; i += Limacon.one_step)
-	{
-		Vector po = { (b + (a*cos(i)))*cos(i), (b + (a * cos(i)))*sin(i) };
-		ScreenVector indo = indexer(po, camera);
-		output.stream[indo.y][indo.x] = indo.pixel;
-	}
+	CurveParamOne Limacon = { 0, 6.5, 0.01 ,lim};
+	output = iterate(output, Limacon, camera);
 	
 	render(output.stream);
 	camera = takeCommand(camera);

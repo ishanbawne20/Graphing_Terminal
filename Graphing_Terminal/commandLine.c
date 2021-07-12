@@ -6,12 +6,18 @@
 
 #pragma warning(disable:4996)
 
+Camera HandleInpError(Camera camera)
+{
+	printf("Enter a valid Command.");
+	return camera;
+}
+
 
 Camera takeCommand(Camera camera)
 {
 	char pross;
 	printf("|| P : (%f, %f) || S : 1:%lf :: GTerminal >>> ", camera.position.x, camera.position.y, camera.scale);
-	scanf(" %c", &pross);
+	scanf("%c ", &pross);
 	Camera retcam ;
 
 	switch (pross)
@@ -38,8 +44,7 @@ Camera takeCommand(Camera camera)
 
 
 	default:
-		printf("Invalid command enter a proper command.");
-		return camera;
+		return HandleInpError(camera);
 	}
 }
 
@@ -75,8 +80,12 @@ Camera scaleCamera(Camera camera)
 {
 	float scale;
 	scanf(" %f", &scale);
-	camera.scale = scale;
-	return camera;
+	if (scale > 0)
+	{
+		camera.scale = scale;
+		return camera;
+	}
+	else return HandleInpError(camera);
 }
 
 Camera setPosCamera(Camera camera)
