@@ -75,22 +75,15 @@ void drawAxes(Camera camera)
 	float step_x = (bounds.x_end - bounds.x_start) / screen_width;
 	float step_y = (bounds.y_end - bounds.y_start) / screen_height;
 
+	ScreenVector origin = { -bounds.x_start / step_x, -bounds.y_start / step_y, ' ' };
+
 	for (int i = 0; i < screen_width; i++)
 	{
-		for (int j = 0; j < screen_height; j++)
-		{
-			if ((0 >= bounds.x_start + (i * step_x)) && (0 < bounds.x_start + ((i + 1) * step_x)) && (0 >= bounds.y_start + (j * step_y)) && (0 < bounds.y_start + ((j + 1) * step_y)))
-			{
-				output.stream[j][i] = '+';
-			}
-			else if ((0 >= bounds.x_start + (i * step_x)) && (0 < bounds.x_start + ((i + 1) * step_x)))
-			{
-				output.stream[j][i] = '|';
-			}
-			else if ((0 >= bounds.y_start + (j * step_y)) && (0 < bounds.y_start + ((j + 1) * step_y)))
-			{
-				output.stream[j][i] = '-';
-			}
-		}
+		output.stream[origin.y][i] = '-';
 	}
+	for (int i = 0; i < screen_height; i++)
+	{
+		output.stream[i][origin.x] = '|';
+	}
+	output.stream[origin.y][origin.x] = '+';
 }

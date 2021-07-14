@@ -17,23 +17,6 @@ ScreenVector indexer(Vector position, Camera camera)
 	float step_x = (bounds.x_end - bounds.x_start) / screen_width;
 	float step_y = (bounds.y_end - bounds.y_start) / screen_height;
 
-	// OLD DUMB CODE
-
-	/*for (int i = 0; i < screen_width; i++)
-	{
-		for (int j = 0; j < screen_height; j++)
-		{
-			if ((position.x >= bounds.x_start + (i * step_x)) && (position.x < bounds.x_start + ((i + 1) * step_x)) && (position.y >= bounds.y_start + (j * step_y)) && (position.y < bounds.y_start + ((j + 1) * step_y)))
-			{
-				ScreenVector index = { i,j,'*' };
-				return index;
-			}
-		}
-	}
-	ScreenVector alt = { 0,0,' ' };
-	return alt;*/
-
-	//NEW CODE
 	ScreenVector origin = {  - bounds.x_start / step_x, - bounds.y_start / step_y, ' ' };
 	
 	ScreenVector index = { origin.x + (position.x / step_x), origin.y + (position.y / step_y), '*' };
