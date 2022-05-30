@@ -1,6 +1,6 @@
 # Graphing_Terminal
 
-A terminal Based Graphing Calculator written in C. Uses only ASCII characters for Plotting graphs. Has A command Line like implementation for navigation in Coordinate space. 
+A Terminal Based Graphing Calculator written in C. Uses only ASCII characters for Plotting graphs. Has A command Line like implementation for navigation in Coordinate space. 
 
 ## Set Up Environment
 
@@ -40,7 +40,7 @@ Where `x` is new x coordinate of camera and `y` is new y coordinate of camera.
 `s new_scale`
 
 
-## Some Screenshots
+## Some Images
 
 * #### `Sin(x)` Curve
 
@@ -55,6 +55,5 @@ Where `x` is new x coordinate of camera and `y` is new y coordinate of camera.
 
 ## Contacts
 
-* Email : ujjwal6921@gmail.com
-
+* Email : ishanbawne20@gmail.com
 ---
