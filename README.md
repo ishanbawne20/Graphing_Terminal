@@ -40,7 +40,7 @@ Where `x` is new x coordinate of camera and `y` is new y coordinate of camera.
 `s new_scale`
 
 
-## Some Screenshots
+## Some Images
 
 * #### `Sin(x)` Curve
 
